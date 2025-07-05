@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1EF9E6442E199855002BDF69 /* FigmaCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9E6432E199855002BDF69 /* FigmaCloneApp.swift */; };
+		1EF9E6462E199855002BDF69 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9E6452E199855002BDF69 /* ContentView.swift */; };
+		1EF9E6482E19985A002BDF69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EF9E6472E19985A002BDF69 /* Assets.xcassets */; };
+		1EF9E64B2E19985A002BDF69 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EF9E64A2E19985A002BDF69 /* Preview Assets.xcassets */; };
+		1EF9E6552E19985B002BDF69 /* FigmaCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9E6542E19985B002BDF69 /* FigmaCloneTests.swift */; };
+		1EF9E65F2E19985B002BDF69 /* FigmaCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9E65E2E19985B002BDF69 /* FigmaCloneUITests.swift */; };
+		1EF9E6612E19985B002BDF69 /* FigmaCloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9E6602E19985B002BDF69 /* FigmaCloneUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1EF9E6512E19985B002BDF69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EF9E6382E199855002BDF69 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EF9E63F2E199855002BDF69;
+			remoteInfo = FigmaClone;
+		};
+		1EF9E65B2E19985B002BDF69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EF9E6382E199855002BDF69 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EF9E63F2E199855002BDF69;
+			remoteInfo = FigmaClone;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1EF9E6402E199855002BDF69 /* FigmaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FigmaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EF9E6432E199855002BDF69 /* FigmaCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigmaCloneApp.swift; sourceTree = "<group>"; };
+		1EF9E6452E199855002BDF69 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1EF9E6472E19985A002BDF69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1EF9E64A2E19985A002BDF69 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1EF9E6502E19985B002BDF69 /* FigmaCloneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FigmaCloneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EF9E6542E19985B002BDF69 /* FigmaCloneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigmaCloneTests.swift; sourceTree = "<group>"; };
+		1EF9E65A2E19985B002BDF69 /* FigmaCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FigmaCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EF9E65E2E19985B002BDF69 /* FigmaCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigmaCloneUITests.swift; sourceTree = "<group>"; };
+		1EF9E6602E19985B002BDF69 /* FigmaCloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigmaCloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1EF9E63D2E199855002BDF69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EF9E64D2E19985B002BDF69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EF9E6572E19985B002BDF69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1EF9E6372E199855002BDF69 = {
+			isa = PBXGroup;
+			children = (
+				1EF9E6422E199855002BDF69 /* FigmaClone */,
+				1EF9E6532E19985B002BDF69 /* FigmaCloneTests */,
+				1EF9E65D2E19985B002BDF69 /* FigmaCloneUITests */,
+				1EF9E6412E199855002BDF69 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1EF9E6412E199855002BDF69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1EF9E6402E199855002BDF69 /* FigmaClone.app */,
+				1EF9E6502E19985B002BDF69 /* FigmaCloneTests.xctest */,
+				1EF9E65A2E19985B002BDF69 /* FigmaCloneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1EF9E6422E199855002BDF69 /* FigmaClone */ = {
+			isa = PBXGroup;
+			children = (
+				1EF9E6432E199855002BDF69 /* FigmaCloneApp.swift */,
+				1EF9E6452E199855002BDF69 /* ContentView.swift */,
+				1EF9E6472E19985A002BDF69 /* Assets.xcassets */,
+				1EF9E6492E19985A002BDF69 /* Preview Content */,
+			);
+			path = FigmaClone;
+			sourceTree = "<group>";
+		};
+		1EF9E6492E19985A002BDF69 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1EF9E64A2E19985A002BDF69 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1EF9E6532E19985B002BDF69 /* FigmaCloneTests */ = {
+			isa = PBXGroup;
+			children = (
+				1EF9E6542E19985B002BDF69 /* FigmaCloneTests.swift */,
+			);
+			path = FigmaCloneTests;
+			sourceTree = "<group>";
+		};
+		1EF9E65D2E19985B002BDF69 /* FigmaCloneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1EF9E65E2E19985B002BDF69 /* FigmaCloneUITests.swift */,
+				1EF9E6602E19985B002BDF69 /* FigmaCloneUITestsLaunchTests.swift */,
+			);
+			path = FigmaCloneUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1EF9E63F2E199855002BDF69 /* FigmaClone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EF9E6642E19985B002BDF69 /* Build configuration list for PBXNativeTarget "FigmaClone" */;
+			buildPhases = (
+				1EF9E63C2E199855002BDF69 /* Sources */,
+				1EF9E63D2E199855002BDF69 /* Frameworks */,
+				1EF9E63E2E199855002BDF69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FigmaClone;
+			productName = FigmaClone;
+			productReference = 1EF9E6402E199855002BDF69 /* FigmaClone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1EF9E64F2E19985B002BDF69 /* FigmaCloneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EF9E6672E19985B002BDF69 /* Build configuration list for PBXNativeTarget "FigmaCloneTests" */;
+			buildPhases = (
+				1EF9E64C2E19985B002BDF69 /* Sources */,
+				1EF9E64D2E19985B002BDF69 /* Frameworks */,
+				1EF9E64E2E19985B002BDF69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1EF9E6522E19985B002BDF69 /* PBXTargetDependency */,
+			);
+			name = FigmaCloneTests;
+			productName = FigmaCloneTests;
+			productReference = 1EF9E6502E19985B002BDF69 /* FigmaCloneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1EF9E6592E19985B002BDF69 /* FigmaCloneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EF9E66A2E19985B002BDF69 /* Build configuration list for PBXNativeTarget "FigmaCloneUITests" */;
+			buildPhases = (
+				1EF9E6562E19985B002BDF69 /* Sources */,
+				1EF9E6572E19985B002BDF69 /* Frameworks */,
+				1EF9E6582E19985B002BDF69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1EF9E65C2E19985B002BDF69 /* PBXTargetDependency */,
+			);
+			name = FigmaCloneUITests;
+			productName = FigmaCloneUITests;
+			productReference = 1EF9E65A2E19985B002BDF69 /* FigmaCloneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1EF9E6382E199855002BDF69 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					1EF9E63F2E199855002BDF69 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					1EF9E64F2E19985B002BDF69 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 1EF9E63F2E199855002BDF69;
+					};
+					1EF9E6592E19985B002BDF69 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 1EF9E63F2E199855002BDF69;
+					};
+				};
+			};
+			buildConfigurationList = 1EF9E63B2E199855002BDF69 /* Build configuration list for PBXProject "FigmaClone" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1EF9E6372E199855002BDF69;
+			productRefGroup = 1EF9E6412E199855002BDF69 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1EF9E63F2E199855002BDF69 /* FigmaClone */,
+				1EF9E64F2E19985B002BDF69 /* FigmaCloneTests */,
+				1EF9E6592E19985B002BDF69 /* FigmaCloneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1EF9E63E2E199855002BDF69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EF9E64B2E19985A002BDF69 /* Preview Assets.xcassets in Resources */,
+				1EF9E6482E19985A002BDF69 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EF9E64E2E19985B002BDF69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EF9E6582E19985B002BDF69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1EF9E63C2E199855002BDF69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EF9E6462E199855002BDF69 /* ContentView.swift in Sources */,
+				1EF9E6442E199855002BDF69 /* FigmaCloneApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EF9E64C2E19985B002BDF69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EF9E6552E19985B002BDF69 /* FigmaCloneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EF9E6562E19985B002BDF69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EF9E65F2E19985B002BDF69 /* FigmaCloneUITests.swift in Sources */,
+				1EF9E6612E19985B002BDF69 /* FigmaCloneUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1EF9E6522E19985B002BDF69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1EF9E63F2E199855002BDF69 /* FigmaClone */;
+			targetProxy = 1EF9E6512E19985B002BDF69 /* PBXContainerItemProxy */;
+		};
+		1EF9E65C2E19985B002BDF69 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1EF9E63F2E199855002BDF69 /* FigmaClone */;
+			targetProxy = 1EF9E65B2E19985B002BDF69 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1EF9E6622E19985B002BDF69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1EF9E6632E19985B002BDF69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1EF9E6652E19985B002BDF69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FigmaClone/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nadaf.FigmaClone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1EF9E6662E19985B002BDF69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"FigmaClone/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nadaf.FigmaClone;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1EF9E6682E19985B002BDF69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nadaf.FigmaCloneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FigmaClone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FigmaClone";
+			};
+			name = Debug;
+		};
+		1EF9E6692E19985B002BDF69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nadaf.FigmaCloneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FigmaClone.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FigmaClone";
+			};
+			name = Release;
+		};
+		1EF9E66B2E19985B002BDF69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nadaf.FigmaCloneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FigmaClone;
+			};
+			name = Debug;
+		};
+		1EF9E66C2E19985B002BDF69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nadaf.FigmaCloneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FigmaClone;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1EF9E63B2E199855002BDF69 /* Build configuration list for PBXProject "FigmaClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EF9E6622E19985B002BDF69 /* Debug */,
+				1EF9E6632E19985B002BDF69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1EF9E6642E19985B002BDF69 /* Build configuration list for PBXNativeTarget "FigmaClone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EF9E6652E19985B002BDF69 /* Debug */,
+				1EF9E6662E19985B002BDF69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1EF9E6672E19985B002BDF69 /* Build configuration list for PBXNativeTarget "FigmaCloneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EF9E6682E19985B002BDF69 /* Debug */,
+				1EF9E6692E19985B002BDF69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1EF9E66A2E19985B002BDF69 /* Build configuration list for PBXNativeTarget "FigmaCloneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EF9E66B2E19985B002BDF69 /* Debug */,
+				1EF9E66C2E19985B002BDF69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1EF9E6382E199855002BDF69 /* Project object */;
+}
