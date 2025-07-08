@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct WeatherDashboardView: View {
     @ObservedObject var weatherViewModel = WeatherViewModel()
     let hours = ["12:00", "03:00", "06:00", "09:00"]
@@ -59,7 +57,7 @@ struct WeatherDashboardView: View {
                             .font(.title3)
                             .foregroundColor(.white)
                         Spacer()
-                        if let date = weatherViewModel.cityDetails?.data.weather.first?.date.getTodaysDate() {
+                        if let date = weatherViewModel.cityDetails?.data.weather.first?.date.getFormattedDate() {
                             Text(date)
                                 .foregroundColor(.white)
                         }
@@ -99,59 +97,13 @@ struct WeatherDashboardView: View {
             .navigationBarBackButtonHidden(true)
             .padding(.top)
             .onAppear{
-                weatherViewModel.getWeatherDetails()
-                weatherViewModel.getCityDetails()
+                weatherViewModel.loadAllWeatherData()
+            }
+            // 🔄 Loading Overlay
+            if weatherViewModel.isLoading {
+                LoadingView()
             }
         }
     }
-    
 }
 
-import SwiftUI
-
-struct ForecastCard: View {
-    let hour: String
-    let temp: String
-    let imageUrl: String
-    
-    var body: some View {
-        VStack(spacing: 6) {
-            Text(hour)
-                .font(.caption)
-                .foregroundColor(.white)
-            
-            AsyncImage(url: URL(string: imageUrl)) { phase in
-                switch phase {
-                case .empty:
-                    ProgressView()
-                        .frame(width: 30, height: 30)
-                case .success(let image):
-                    image
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 30, height: 30)
-                case .failure:
-                    Image(systemName: "exclamationmark.triangle")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 30, height: 30)
-                        .foregroundColor(.red)
-                @unknown default:
-                    EmptyView()
-                }
-            }
-            
-            Text(temp)
-                .font(.caption)
-                .foregroundColor(.white)
-        }
-        .frame(width: 60)
-    }
-}
-
-
-struct WeatherDashboardView_Previews: PreviewProvider {
-    static var previews: some View {
-        WeatherDashboardView()
-    }
-}
