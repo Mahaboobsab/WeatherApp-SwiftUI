@@ -24,9 +24,6 @@ struct ContentView: View {
                     
                     // Weather Icon (System image used as placeholder)
                     Image("Dashboard").resizable().frame(width: 228, height: 228, alignment: .top).ignoresSafeArea()
-                    
-                    
-                    
                     // Title Text
                     VStack(spacing: 5) {
                         Text("Weather")

@@ -10,6 +10,8 @@ import SwiftUI
 import SwiftUI
 
 struct WeatherDashboardView: View {
+    @ObservedObject var weatherViewModel = WeatherViewModel()
+    
     var body: some View {
         ZStack {
             // Gradient Background
@@ -29,16 +31,20 @@ struct WeatherDashboardView: View {
                         .frame(width: 100, height: 100)
                         .foregroundColor(.white)
 
-                    Text("19°")
-                        .font(.system(size: 64, weight: .bold))
-                        .foregroundColor(.white)
-
-                    Text("Precipitations\nMax: 24° Min: 18°")
-                        .multilineTextAlignment(.center)
-                        .font(.headline)
-                        .foregroundColor(.white)
+                    
+                    if let temp = weatherViewModel.weatherDetails?.main.temp {
+                        Text("\(Int(297.15 - temp))°")
+                            .font(.system(size: 64, weight: .bold))
+                            .foregroundColor(.white)
+                    }
+                    if let max = weatherViewModel.weatherDetails?.main.temp_max, let min = weatherViewModel.weatherDetails?.main.temp_min {
+                        Text("Precipitations\nMax: \(Int(297.15 - max))° Min: \(Int(297.15 - min))°")
+                            .multilineTextAlignment(.center)
+                            .font(.headline)
+                            .foregroundColor(.white)
+                    }
                 }
-Spacer()
+                        Spacer()
                 // Cozy House Image Placeholder
                 Image("House") // Replace with your local asset name
                     .resizable()
@@ -52,8 +58,11 @@ Spacer()
                             .font(.title3)
                             .foregroundColor(.white)
                         Spacer()
-                        Text("July, 21")
-                            .foregroundColor(.white)
+                        if let date = weatherViewModel.cityDetails?.data.weather.first?.date.getTodaysDate() {
+                            Text(date)
+                                .foregroundColor(.white)
+                        }
+                        
                     }
 
                     // Hourly Forecast
@@ -76,6 +85,10 @@ Spacer()
             }
             .navigationBarBackButtonHidden(true)
             .padding(.top)
+            .onAppear{
+               te weatherViewModel.getWeatherDetails()
+                weatherViewModel.getCityDetails()
+            }
         }
     }
 }
