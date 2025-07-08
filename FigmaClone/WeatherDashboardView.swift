@@ -86,7 +86,7 @@ struct WeatherDashboardView: View {
             .navigationBarBackButtonHidden(true)
             .padding(.top)
             .onAppear{
-               te weatherViewModel.getWeatherDetails()
+                weatherViewModel.getWeatherDetails()
                 weatherViewModel.getCityDetails()
             }
         }
