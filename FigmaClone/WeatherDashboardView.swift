@@ -81,7 +81,7 @@ struct WeatherDashboardView: View {
                             
                             if let hourly = weatherViewModel.cityDetails?.data.weather.first?.hourly {
                                 ForEach(Array(hourly.prefix(4).enumerated()), id: \.offset) { index, hourData in
-                                    ForecastCard(hour: hours[index] , temp: "\(hourData.tempC)°C")
+                                    ForecastCard(hour: hours[index] , temp: "\(hourData.tempC)°C", imageUrl: "\(hourData.weatherIconURL.first?.value ?? "")")
                                 }
                             }
                             
@@ -107,21 +107,40 @@ struct WeatherDashboardView: View {
     
 }
 
+import SwiftUI
+
 struct ForecastCard: View {
     let hour: String
     let temp: String
-    
+    let imageUrl: String
+
     var body: some View {
         VStack(spacing: 6) {
             Text(hour)
                 .font(.caption)
                 .foregroundColor(.white)
-            
-            Image(systemName: "cloud.rain.fill")
-                .resizable()
-                .frame(width: 30, height: 30)
-                .foregroundColor(.white)
-            
+
+            AsyncImage(url: URL(string: imageUrl)) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                        .frame(width: 30, height: 30)
+                case .success(let image):
+                    image
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30, height: 30)
+                case .failure:
+                    Image(systemName: "exclamationmark.triangle")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30, height: 30)
+                        .foregroundColor(.red)
+                @unknown default:
+                    EmptyView()
+                }
+            }
+
             Text(temp)
                 .font(.caption)
                 .foregroundColor(.white)
@@ -129,6 +148,7 @@ struct ForecastCard: View {
         .frame(width: 60)
     }
 }
+
 
 struct WeatherDashboardView_Previews: PreviewProvider {
     static var previews: some View {
