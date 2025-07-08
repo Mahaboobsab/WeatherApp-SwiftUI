@@ -47,7 +47,7 @@ struct WeatherDashboardView: View {
                 }
                 Spacer()
                 // Cozy House Image Placeholder
-                Image("House") // Replace with your local asset name
+                Image("house (1)") // Replace with your local asset name
                     .resizable()
                     .scaledToFit()
                     .frame(height: 200)
@@ -113,13 +113,13 @@ struct ForecastCard: View {
     let hour: String
     let temp: String
     let imageUrl: String
-
+    
     var body: some View {
         VStack(spacing: 6) {
             Text(hour)
                 .font(.caption)
                 .foregroundColor(.white)
-
+            
             AsyncImage(url: URL(string: imageUrl)) { phase in
                 switch phase {
                 case .empty:
@@ -140,7 +140,7 @@ struct ForecastCard: View {
                     EmptyView()
                 }
             }
-
+            
             Text(temp)
                 .font(.caption)
                 .foregroundColor(.white)
