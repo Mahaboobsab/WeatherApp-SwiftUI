@@ -55,5 +55,19 @@ extension String {
         }
         return nil
     }
+    
+    func convertTimeCode() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HHmm"
+
+        let displayFormatter = DateFormatter()
+        displayFormatter.dateFormat = "hh:mm a"
+
+        if let date = formatter.date(from: self) {
+            return displayFormatter.string(from: date)
+        }
+        return "Invalid time"
+    }
+
 
 }
