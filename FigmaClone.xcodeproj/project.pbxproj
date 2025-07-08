@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E19062E2E1C3231001568CD /* WeatherLandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E19062D2E1C3231001568CD /* WeatherLandingView.swift */; };
+		1E1906302E1C374A001568CD /* WeatherDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E19062F2E1C374A001568CD /* WeatherDashboardView.swift */; };
 		1EF9E6442E199855002BDF69 /* FigmaCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9E6432E199855002BDF69 /* FigmaCloneApp.swift */; };
 		1EF9E6462E199855002BDF69 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9E6452E199855002BDF69 /* ContentView.swift */; };
 		1EF9E6482E19985A002BDF69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EF9E6472E19985A002BDF69 /* Assets.xcassets */; };
@@ -14,6 +16,7 @@
 		1EF9E6552E19985B002BDF69 /* FigmaCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9E6542E19985B002BDF69 /* FigmaCloneTests.swift */; };
 		1EF9E65F2E19985B002BDF69 /* FigmaCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9E65E2E19985B002BDF69 /* FigmaCloneUITests.swift */; };
 		1EF9E6612E19985B002BDF69 /* FigmaCloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9E6602E19985B002BDF69 /* FigmaCloneUITestsLaunchTests.swift */; };
+		1EF9E66E2E19988B002BDF69 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF9E66D2E19988B002BDF69 /* SignInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E19062D2E1C3231001568CD /* WeatherLandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLandingView.swift; sourceTree = "<group>"; };
+		1E19062F2E1C374A001568CD /* WeatherDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDashboardView.swift; sourceTree = "<group>"; };
 		1EF9E6402E199855002BDF69 /* FigmaClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FigmaClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF9E6432E199855002BDF69 /* FigmaCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigmaCloneApp.swift; sourceTree = "<group>"; };
 		1EF9E6452E199855002BDF69 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +49,7 @@
 		1EF9E65A2E19985B002BDF69 /* FigmaCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FigmaCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EF9E65E2E19985B002BDF69 /* FigmaCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigmaCloneUITests.swift; sourceTree = "<group>"; };
 		1EF9E6602E19985B002BDF69 /* FigmaCloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigmaCloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1EF9E66D2E19988B002BDF69 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,9 @@
 				1EF9E6452E199855002BDF69 /* ContentView.swift */,
 				1EF9E6472E19985A002BDF69 /* Assets.xcassets */,
 				1EF9E6492E19985A002BDF69 /* Preview Content */,
+				1EF9E66D2E19988B002BDF69 /* SignInView.swift */,
+				1E19062D2E1C3231001568CD /* WeatherLandingView.swift */,
+				1E19062F2E1C374A001568CD /* WeatherDashboardView.swift */,
 			);
 			path = FigmaClone;
 			sourceTree = "<group>";
@@ -257,7 +266,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EF9E66E2E19988B002BDF69 /* SignInView.swift in Sources */,
+				1E1906302E1C374A001568CD /* WeatherDashboardView.swift in Sources */,
 				1EF9E6462E199855002BDF69 /* ContentView.swift in Sources */,
+				1E19062E2E1C3231001568CD /* WeatherLandingView.swift in Sources */,
 				1EF9E6442E199855002BDF69 /* FigmaCloneApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
