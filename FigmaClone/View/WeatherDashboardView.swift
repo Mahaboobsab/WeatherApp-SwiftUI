@@ -63,6 +63,11 @@ struct WeatherDashboardView: View {
                         }
                         
                     }
+                    Divider()
+                        .frame(height: 1) // Thickness of the line
+                        .background(Color.white) // Line color
+                        .padding(.vertical, 10) // Space above and below
+
                     
                     // Hourly Forecast
                     ScrollView(.horizontal, showsIndicators: false) {

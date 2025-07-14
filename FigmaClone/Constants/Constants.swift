@@ -25,4 +25,7 @@ func buildCityURL() -> String {
     return "https://api.worldweatheronline.com/premium/v1/weather.ashx?key=0494752a675946e292d55629160406&q=Bangalore&format=json&num_of_days=5"
 }
 
+func buildSearchCityURL(query: String) -> String {
+    return "https://api.openweathermap.org/geo/1.0/direct?q=\(query)&limit=100&appid=f32f36efd5c0cefa353f90cb87fa26d5&country code=IN"
+}
 //

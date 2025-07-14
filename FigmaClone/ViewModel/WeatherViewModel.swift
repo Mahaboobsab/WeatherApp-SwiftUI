@@ -1,6 +1,7 @@
 import Foundation
 
 class WeatherViewModel: ObservableObject {
+    
     @Published var weatherDetails: WeatherResponse?
     @Published var cityDetails: CityModel?
     @Published var isLoading: Bool = false
