@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct WeatherDashboardView: View {
+    
     @ObservedObject var weatherViewModel = WeatherViewModel()
     let hours = ["12:00", "03:00", "06:00", "09:00"]
+    @State private var showSheet = false
     
     var body: some View {
         ZStack {
@@ -20,8 +22,17 @@ struct WeatherDashboardView: View {
                 endPoint: .bottomTrailing
             )
             .ignoresSafeArea()
-            
-            VStack(spacing: 20) {
+            VStack() {
+                Button(action: {
+                    print("Search tapped!")
+                    showSheet = true
+                }) {
+                    Image(systemName: "magnifyingglass")
+                        .font(.title2)
+                        .padding(10)
+                        .background(Color.white.opacity(0.2))
+                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                }
                 
                 // Main Weather Info
                 VStack(spacing: 8) {
@@ -29,13 +40,13 @@ struct WeatherDashboardView: View {
                         .resizable()
                         .frame(width: 100, height: 100)
                         .foregroundColor(.white)
-                    
-                    
+    
                     if let temp = weatherViewModel.weatherDetails?.main.temp {
                         Text("\(Int(297.15 - temp))°")
                             .font(.system(size: 64, weight: .bold))
                             .foregroundColor(.white)
                     }
+                    
                     if let max = weatherViewModel.weatherDetails?.main.temp_max, let min = weatherViewModel.weatherDetails?.main.temp_min {
                         Text("Precipitations\nMax: \(Int(297.15 - max))° Min: \(Int(297.15 - min))°")
                             .multilineTextAlignment(.center)
@@ -43,7 +54,9 @@ struct WeatherDashboardView: View {
                             .foregroundColor(.white)
                     }
                 }
+                
                 Spacer()
+                
                 // Cozy House Image Placeholder
                 Image("house (1)") // Replace with your local asset name
                     .resizable()
@@ -67,8 +80,7 @@ struct WeatherDashboardView: View {
                         .frame(height: 1) // Thickness of the line
                         .background(Color.white) // Line color
                         .padding(.vertical, 10) // Space above and below
-
-                    
+            
                     // Hourly Forecast
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
@@ -98,6 +110,9 @@ struct WeatherDashboardView: View {
                 .padding(.horizontal)
                 
                 Spacer()
+            }
+            .sheet(isPresented: $showSheet) {
+                CitySearchView()
             }
             .navigationBarBackButtonHidden(true)
             .padding(.top)
