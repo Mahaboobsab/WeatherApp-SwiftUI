@@ -36,7 +36,7 @@ struct WeatherLandingView: View {
                         .fontWeight(.bold)
                         .foregroundColor(.white)
 
-                    Text("ForeCasts")
+                    Text("Fore casts")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(.yellow)
@@ -48,10 +48,10 @@ struct WeatherLandingView: View {
                 Button(action: {
                     // TODO: Add navigation or functionality
                 }) {
-                    Text("Get Start")
+                    Text("Get start")
                         .font(.headline)
                         .foregroundColor(.blue)
-                        .padding(.horizontal, 50)
+                        .padding(.horizontal, 100)
                         .padding(.vertical, 12)
                         .background(Color.yellow)
                         .clipShape(Capsule())

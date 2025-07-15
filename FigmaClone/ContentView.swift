@@ -28,12 +28,12 @@ struct ContentView: View {
                     VStack(spacing: 5) {
                         Text("Weather")
                             .font(.largeTitle)
-                            .fontWeight(.bold)
+                            .fontWeight(.light)
                             .foregroundColor(.white)
                         
-                        Text("Fore Casts")
+                        Text("Fore casts")
                             .font(.largeTitle)
-                            .fontWeight(.bold)
+                            .fontWeight(.light)
                             .foregroundColor(.yellow)
                     }
                     
@@ -41,11 +41,11 @@ struct ContentView: View {
                     
                     // NavigationLink instead of Button
                                       NavigationLink(destination: WeatherDashboardView()) {
-                                          Text("Get Start")
+                                          Text("Get start")
                                               .font(.headline)
                                               .foregroundColor(.blue)
-                                              .padding(.horizontal, 50)
-                                              .padding(.vertical, 12)
+                                              .padding(.horizontal, 100)
+                                              .padding(.vertical, 20)
                                               .background(Color.yellow)
                                               .clipShape(Capsule())
                                       }

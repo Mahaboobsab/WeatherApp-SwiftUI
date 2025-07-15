@@ -13,6 +13,8 @@ struct WeatherDashboardView: View {
     let hours = ["12:00", "03:00", "06:00", "09:00"]
     @State private var showSheet = false
     @State private var selectedCity: CityNameModel?
+    @StateObject var locationManager = LocationManager()
+    
     
     var body: some View {
         ZStack {
@@ -89,16 +91,6 @@ struct WeatherDashboardView: View {
                     // Hourly Forecast
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
-                            //                                                        if let first = weatherViewModel.cityDetails?.data.weather.first?.hourly.first?.tempC,
-                            //                                                           let second = weatherViewModel.cityDetails?.data.weather.first?.hourly[1].tempC,
-                            //                                                           let third = weatherViewModel.cityDetails?.data.weather.first?.hourly[2].tempC,
-                            //                                                           let fourth = weatherViewModel.cityDetails?.data.weather.first?.hourly[3].tempC {
-                            //                                                            ForecastCard(hour: "12:00", temp: "\(first)°C")
-                            //                                                            ForecastCard(hour: "03:00", temp: "\(second)°C")
-                            //                                                            ForecastCard(hour: "06:00", temp: "\(third)°C")
-                            //                                                            ForecastCard(hour: "09:00", temp: "\(fourth)°C")
-                            //                                                        }
-                            
                             if let hourly = weatherViewModel.cityDetails?.data.weather.first?.hourly {
                                 ForEach(Array(hourly.prefix(4).enumerated()), id: \.offset) { index, hourData in
                                     ForecastCard(hour: hours[index] , temp: "\(hourData.tempC)°C", imageUrl: "\(hourData.weatherIconURL.first?.value ?? "")")
@@ -121,14 +113,25 @@ struct WeatherDashboardView: View {
             }
             .navigationBarBackButtonHidden(true)
             .padding(.top)
-            .onAppear {
-                if let city = selectedCity {
-                    weatherViewModel.loadAllWeatherData(cityModel: city)
-                } else {
-                    weatherViewModel.loadAllWeatherData(cityModel: CityNameModel(name: "", localNames: nil, lat: 12.9629, lon: 77.5775, country: "", state: ""))
-                }
-                
-            }
+            //            .onAppear {
+            //                if let coord = locationManager.location {
+            //                    print("Latitude: \(coord.latitude)")
+            //                    print("Longitude: \(coord.longitude)")
+            //
+            //                } else if let error = locationManager.errorMessage {
+            //                    print("Error: \(error)")
+            //
+            //                } else {
+            //                    print("Fetching location...")
+            //
+            //                }
+            //                if let city = selectedCity {
+            //                    weatherViewModel.loadAllWeatherData(cityModel: city)
+            //                } else {
+            //                    weatherViewModel.loadAllWeatherData(cityModel: CityNameModel(name: "", localNames: nil, lat: 12.9629, lon: 77.5775, country: "", state: ""))
+            //                }
+            //
+            //            }
             .onChange(of: showSheet) { newValue in
                 if !newValue {
                     print("CitySearchView was dismissed!")
@@ -137,6 +140,11 @@ struct WeatherDashboardView: View {
                     } else {
                         weatherViewModel.loadAllWeatherData(cityModel: CityNameModel(name: "", localNames: nil, lat: 12.9629, lon: 77.5775, country: "", state: ""))
                     }
+                }
+            }
+            .onReceive(locationManager.$location) { newLocation in
+                if let coord = newLocation {
+                    weatherViewModel.loadAllWeatherData(cityModel: CityNameModel(name: "", localNames: nil, lat: coord.latitude, lon: coord.longitude, country: "", state: ""))
                 }
             }
             // 🔄 Loading Overlay
