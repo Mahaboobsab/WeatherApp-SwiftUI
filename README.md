@@ -25,5 +25,8 @@ WeatherApp using swiftUI
 https://github.com/user-attachments/assets/a289d41e-ea41-410c-b52c-4311f8a09b0a
 
 
+API's  
 
+- https://api.openweathermap.org/data/2.5/weather?lat=16.1693033&lon=74.8224338&appid=f32f36efd5c0cefa353f90cb87fa26d5  (Weather)
+- https://api.openweathermap.org/geo/1.0/direct?q=gokak&limit=100&appid=f32f36efd5c0cefa353f90cb87fa26d5&countrycode=IN (places)
 
