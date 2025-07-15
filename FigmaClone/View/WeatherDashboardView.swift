@@ -12,6 +12,7 @@ struct WeatherDashboardView: View {
     @ObservedObject var weatherViewModel = WeatherViewModel()
     let hours = ["12:00", "03:00", "06:00", "09:00"]
     @State private var showSheet = false
+    @State private var selectedCity: CityNameModel?
     
     var body: some View {
         ZStack {
@@ -35,26 +36,30 @@ struct WeatherDashboardView: View {
                 }
                 
                 // Main Weather Info
-                VStack(spacing: 8) {
+                VStack(spacing: 0) {
                     Image(systemName: "Dashboard")
                         .resizable()
                         .frame(width: 100, height: 100)
                         .foregroundColor(.white)
-    
+                    
+                    if let cityName = weatherViewModel.weatherDetails?.name {
+                        Text(cityName)
+                            .font(.system(size: 24, weight: .light))
+                            .foregroundColor(.white)
+                    }
                     if let temp = weatherViewModel.weatherDetails?.main.temp {
-                        Text("\(Int(297.15 - temp))°")
-                            .font(.system(size: 64, weight: .bold))
+                        Text("\(Int(temp - 273.15))°")
+                            .font(.system(size: 54, weight: .bold))
                             .foregroundColor(.white)
                     }
                     
                     if let max = weatherViewModel.weatherDetails?.main.temp_max, let min = weatherViewModel.weatherDetails?.main.temp_min {
-                        Text("Precipitations\nMax: \(Int(297.15 - max))° Min: \(Int(297.15 - min))°")
+                        Text("Precipitations\nMax: \(Int(max - 273.15))° Min: \(Int(min - 273.15))°")
                             .multilineTextAlignment(.center)
                             .font(.headline)
                             .foregroundColor(.white)
                     }
                 }
-                
                 Spacer()
                 
                 // Cozy House Image Placeholder
@@ -80,7 +85,7 @@ struct WeatherDashboardView: View {
                         .frame(height: 1) // Thickness of the line
                         .background(Color.white) // Line color
                         .padding(.vertical, 10) // Space above and below
-            
+                    
                     // Hourly Forecast
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
@@ -112,12 +117,27 @@ struct WeatherDashboardView: View {
                 Spacer()
             }
             .sheet(isPresented: $showSheet) {
-                CitySearchView()
+                CitySearchView(selectedCity: $selectedCity)
             }
             .navigationBarBackButtonHidden(true)
             .padding(.top)
-            .onAppear{
-                weatherViewModel.loadAllWeatherData()
+            .onAppear {
+                if let city = selectedCity {
+                    weatherViewModel.loadAllWeatherData(cityModel: city)
+                } else {
+                    weatherViewModel.loadAllWeatherData(cityModel: CityNameModel(name: "", localNames: nil, lat: 12.9629, lon: 77.5775, country: "", state: ""))
+                }
+                
+            }
+            .onChange(of: showSheet) { newValue in
+                if !newValue {
+                    print("CitySearchView was dismissed!")
+                    if let city = selectedCity {
+                        weatherViewModel.loadAllWeatherData(cityModel: city)
+                    } else {
+                        weatherViewModel.loadAllWeatherData(cityModel: CityNameModel(name: "", localNames: nil, lat: 12.9629, lon: 77.5775, country: "", state: ""))
+                    }
+                }
             }
             // 🔄 Loading Overlay
             if weatherViewModel.isLoading {

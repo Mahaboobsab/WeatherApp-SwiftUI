@@ -7,13 +7,13 @@ class WeatherViewModel: ObservableObject {
     @Published var isLoading: Bool = false
 
     // Call both APIs within one unified task
-    func loadAllWeatherData() {
+    func loadAllWeatherData(cityModel: CityNameModel) {
         isLoading = true
 
         let group = DispatchGroup()
 
         group.enter()
-        WeatherResponseResource().getWeatherDetails { result in
+        WeatherResponseResource().getWeatherDetails(lat: cityModel.lat, lon: cityModel.lon ){ result in
             DispatchQueue.main.async {
                 self.weatherDetails = result
                 group.leave()

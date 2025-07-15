@@ -10,6 +10,8 @@ import SwiftUI
 struct CitySearchView: View {
     @State private var cityName: String = ""
     @ObservedObject var cityViewModel = SearchCityViewModel()
+    @Environment(\.dismiss) var dismiss
+    @Binding var selectedCity: CityNameModel?
     
     var body: some View {
         ZStack {
@@ -41,7 +43,9 @@ struct CitySearchView: View {
                     if let cities = cityViewModel.cityNameModelDetails {
                         ForEach(cities, id: \.self) { city in
                             SearchResultView(title: city.name, subtitle: city.country)
-                                .listRowBackground(Color.white.opacity(0.2))
+                                .listRowBackground(Color.white.opacity(0.2)).onTapGesture {
+                                    handleCitySelection(city)
+                                }
                         }
                     } else {
                         Text("No cities found")
@@ -62,11 +66,18 @@ struct CitySearchView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
+    
+    func handleCitySelection(_ city: CityNameModel) {
+        print("Selected city:", city.name)
+        selectedCity = city
+        dismiss()
+    }
+    
 }
 
 struct CitySearchView_Previews: PreviewProvider {
     static var previews: some View {
-        CitySearchView()
+        CitySearchView(selectedCity: .constant(nil))
     }
 }
 

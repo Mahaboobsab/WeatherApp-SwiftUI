@@ -74,9 +74,11 @@ struct System: Codable {
 
 struct WeatherResponseResource {
 
-    func getWeatherDetails(completionHandler:@escaping(_ result: WeatherResponse?)->Void) {
+    func getWeatherDetails(lat:Double,
+                           lon: Double,
+                           completionHandler:@escaping(_ result: WeatherResponse?)->Void) {
 
-        var urlRequest = URLRequest(url: URL(string: buildWeatherURL())!)
+        var urlRequest = URLRequest(url: URL(string: buildWeatherURL(lat: lat, lon: lon))!)
         urlRequest.httpMethod = "get"
         urlRequest.addValue("application/json", forHTTPHeaderField: "content-type")
 

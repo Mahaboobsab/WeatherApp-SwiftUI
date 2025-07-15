@@ -12,12 +12,12 @@ struct API {
     static let apiKey = "f32f36efd5c0cefa353f90cb87fa26d5"
 }
 
-struct Location {
-    static let defaultLatitude = 44.34
-    static let defaultLongitude = 10.99
-}
+//struct Location {
+//    static let defaultLatitude = 44.34
+//    static let defaultLongitude = 10.99
+//}
 
-func buildWeatherURL(lat: Double = Location.defaultLatitude, lon: Double = Location.defaultLongitude) -> String {
+func buildWeatherURL(lat: Double, lon: Double) -> String {
     return "\(API.baseURL)?lat=\(lat)&lon=\(lon)&appid=\(API.apiKey)"
 }
 
