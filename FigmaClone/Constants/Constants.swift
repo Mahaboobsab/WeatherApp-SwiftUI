@@ -26,6 +26,6 @@ func buildCityURL() -> String {
 }
 
 func buildSearchCityURL(query: String) -> String {
-    return "https://api.openweathermap.org/geo/1.0/direct?q=\(query)&limit=100&appid=f32f36efd5c0cefa353f90cb87fa26d5&country code=IN"
+    return "https://api.openweathermap.org/geo/1.0/direct?q=\(query)&limit=100&appid=f32f36efd5c0cefa353f90cb87fa26d5&countrycode=IN"
 }
 //

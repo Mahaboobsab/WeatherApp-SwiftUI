@@ -71,6 +71,7 @@ struct System: Codable {
     let sunrise: Int
     let sunset: Int
 }
+
 struct WeatherResponseResource {
 
     func getWeatherDetails(completionHandler:@escaping(_ result: WeatherResponse?)->Void) {

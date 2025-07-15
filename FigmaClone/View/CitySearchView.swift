@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CitySearchView: View {
     @State private var cityName: String = ""
+    @ObservedObject var cityViewModel = SearchCityViewModel()
     
     var body: some View {
         ZStack {
@@ -27,7 +28,7 @@ struct CitySearchView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                     
                     Button("Search", action: {
-                        print("Search tapped!")
+                        cityViewModel.loadCityData(query: cityName)
                         
                     })
                     .padding(10)
@@ -37,16 +38,26 @@ struct CitySearchView: View {
                 }.padding()
                 
                 List {
-                    SearchResultView(title: "New York", subtitle: "New York")
-                        .listRowBackground(Color.white.opacity(0.2))
-                    SearchResultView(title: "New Lenox", subtitle: "Illinois")
-                        .listRowBackground(Color.white.opacity(0.2))
-                    SearchResultView(title: "Oswego", subtitle: "Illinois")
-                        .listRowBackground(Color.white.opacity(0.2))
+                    if let cities = cityViewModel.cityNameModelDetails {
+                        ForEach(cities, id: \.self) { city in
+                            SearchResultView(title: city.name, subtitle: city.country)
+                                .listRowBackground(Color.white.opacity(0.2))
+                        }
+                    } else {
+                        Text("No cities found")
+                            .foregroundColor(.gray)
+                    }
                 }
                 .listRowBackground(Color.clear) // 🧼 Clears row backgrounds
                 .scrollContentBackground(.hidden)
                 
+            }
+            .onAppear{
+                cityViewModel.loadCityData(query: "Bengaluru")
+            }
+            // 🔄 Loading Overlay
+            if cityViewModel.isLoading {
+                LoadingView()
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)

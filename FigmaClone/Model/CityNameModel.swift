@@ -9,7 +9,7 @@ import Foundation
 
 
 // MARK: - CityNameModel
-struct CityNameModel: Codable {
+struct CityNameModel: Codable, Hashable {
     let name: String
     let localNames: [String: String]?
     let lat, lon: Double
@@ -22,4 +22,17 @@ struct CityNameModel: Codable {
     }
 }
 
-typealias CityName = [CityNameModel]
+//typealias CityName = [CityNameModel]
+
+struct CityNameModelResponseResource {
+
+    func getCityDetails(query: String, completionHandler:@escaping(_ result: [CityNameModel]?)->Void) {
+        var urlRequest = URLRequest(url: URL(string: buildSearchCityURL(query: query))!)
+        urlRequest.httpMethod = "get"
+        urlRequest.addValue("application/json", forHTTPHeaderField: "content-type")
+
+        HttpUtility.shared.getData(request: urlRequest, resultType: [CityNameModel].self) { response in
+            _ = completionHandler(response)
+        }
+    }
+}
