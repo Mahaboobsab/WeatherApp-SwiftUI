@@ -6,3 +6,7 @@ WeatherApp using swiftUI
 
 
 <img width="1179" height="2556" alt="Simulator Screen Shot - iPhone 14 Pro - 2025-07-15 at 00 24 08" src="https://github.com/user-attachments/assets/667f5552-4739-4ade-a862-a62aac24c926" />
+
+
+https://github.com/user-attachments/assets/2aa65a19-1a82-412b-bbab-a55f804bd8e5
+
