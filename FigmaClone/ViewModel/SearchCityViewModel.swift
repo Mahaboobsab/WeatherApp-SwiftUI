@@ -18,22 +18,20 @@ class SearchCityViewModel: ObservableObject {
         CityNameModelResponseResource().getCityDetails(query: query) { [weak self] result in
             DispatchQueue.main.async {
                 self?.cityNameModelDetails = result
-                if let data = result {
-                    self?.saveSearchResult(data: data)
-                }
                 self?.isLoading = false
             }
         }
     }
     
-    func saveSearchResult(data: [CityNameModel]) {
+    func saveSearchResult(data: CityNameModel) {
         AppStorageManager.shared.save(data, forKey: "selectedCity")
     }
     
     func loadPreviousData() -> [CityNameModel]? {
-        if let loadedCity = AppStorageManager.shared.load("selectedCity", as: [CityNameModel].self) {
+        if let loadedCity = AppStorageManager.shared.load("selectedCity", as: CityNameModel.self) {
             print(loadedCity)
-            cityNameModelDetails = loadedCity.flatMap { $0 }
+           // cityNameModelDetails = loadedCity.flatMap { $0 }
+            cityNameModelDetails = loadedCity
             return cityNameModelDetails
         } else {
             return nil

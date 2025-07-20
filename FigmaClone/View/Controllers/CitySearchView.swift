@@ -72,6 +72,7 @@ struct CitySearchView: View {
     private func handleCitySelection(_ city: CityNameModel) {
         print("Selected city:", city.name)
         selectedCity = city
+        cityViewModel.saveSearchResult(data: city)
         dismiss()
     }
 }
