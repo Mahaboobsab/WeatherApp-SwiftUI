@@ -56,8 +56,10 @@ struct CitySearchView: View {
                 .scrollContentBackground(.hidden)
                 
             }
-            .onAppear{
-                cityViewModel.loadCityData(query: "Bengaluru")
+            .onAppear {
+                if cityViewModel.loadPreviousData() == nil {
+                    cityViewModel.loadCityData(query: "Bengaluru")
+                }
             }
             // 🔄 Loading Overlay
             if cityViewModel.isLoading {
@@ -67,12 +69,11 @@ struct CitySearchView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
     
-    func handleCitySelection(_ city: CityNameModel) {
+    private func handleCitySelection(_ city: CityNameModel) {
         print("Selected city:", city.name)
         selectedCity = city
         dismiss()
     }
-    
 }
 
 struct CitySearchView_Previews: PreviewProvider {

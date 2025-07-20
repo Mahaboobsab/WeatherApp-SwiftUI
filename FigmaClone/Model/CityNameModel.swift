@@ -9,7 +9,7 @@ import Foundation
 
 
 // MARK: - CityNameModel
-struct CityNameModel: Codable, Hashable {
+struct CityNameModel: Codable, Equatable, Hashable {
     let name: String
     let localNames: [String: String]?
     let lat, lon: Double
