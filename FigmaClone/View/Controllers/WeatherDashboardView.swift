@@ -113,25 +113,6 @@ struct WeatherDashboardView: View {
             }
             .navigationBarBackButtonHidden(true)
             .padding(.top)
-            //            .onAppear {
-            //                if let coord = locationManager.location {
-            //                    print("Latitude: \(coord.latitude)")
-            //                    print("Longitude: \(coord.longitude)")
-            //
-            //                } else if let error = locationManager.errorMessage {
-            //                    print("Error: \(error)")
-            //
-            //                } else {
-            //                    print("Fetching location...")
-            //
-            //                }
-            //                if let city = selectedCity {
-            //                    weatherViewModel.loadAllWeatherData(cityModel: city)
-            //                } else {
-            //                    weatherViewModel.loadAllWeatherData(cityModel: CityNameModel(name: "", localNames: nil, lat: 12.9629, lon: 77.5775, country: "", state: ""))
-            //                }
-            //
-            //            }
             .onChange(of: showSheet) { newValue in
                 if !newValue {
                     print("CitySearchView was dismissed!")
