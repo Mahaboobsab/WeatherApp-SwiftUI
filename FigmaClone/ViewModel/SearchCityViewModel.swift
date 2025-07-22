@@ -29,8 +29,6 @@ class SearchCityViewModel: ObservableObject {
     
     func loadPreviousData() -> [CityNameModel]? {
         if let loadedCity = AppStorageManager.shared.load("selectedCity", as: CityNameModel.self) {
-            print(loadedCity)
-           // cityNameModelDetails = loadedCity.flatMap { $0 }
             cityNameModelDetails = loadedCity
             return cityNameModelDetails
         } else {
