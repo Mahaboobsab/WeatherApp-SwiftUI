@@ -17,12 +17,12 @@ WeatherApp using swiftUI
   </tr>
 </table>
 
-**Demo**
+**Demo**  
 
+https://github.com/user-attachments/assets/a289d41e-ea41-410c-b52c-4311f8a09b0a  
 
-
-
-https://github.com/user-attachments/assets/a289d41e-ea41-410c-b52c-4311f8a09b0a
+Swipe to Delete
+https://www.youtube.com/watch?v=oxJz9VljwFY
 
 
 API's  
