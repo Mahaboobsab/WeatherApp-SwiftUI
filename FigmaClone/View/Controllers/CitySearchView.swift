@@ -46,7 +46,7 @@ struct CitySearchView: View {
                                 .listRowBackground(Color.white.opacity(0.2)).onTapGesture {
                                     handleCitySelection(city)
                                 }
-                        }
+                        }.onDelete(perform: deleteCity(at:))
                     } else {
                         Text("No cities found")
                             .foregroundColor(.gray)
@@ -68,6 +68,22 @@ struct CitySearchView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
+    
+    private func deleteCity(at offsets: IndexSet) {
+        if var cities = cityViewModel.cityNameModelDetails {
+            let removedCities = offsets.map { cities[$0] }
+            // Now delete them
+            cities.remove(atOffsets: offsets)
+            cityViewModel.cityNameModelDetails = cities
+            
+            // You can now do something with removedCities
+            print("Deleted cities: \(removedCities)")
+            for city in removedCities {
+                cityViewModel.deleteSearchResult(data: city)
+            }
+        }
+    }
+
     
     private func handleCitySelection(_ city: CityNameModel) {
         print("Selected city:", city.name)

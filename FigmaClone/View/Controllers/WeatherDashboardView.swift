@@ -12,6 +12,7 @@ struct WeatherDashboardView: View {
     @ObservedObject var weatherViewModel = WeatherViewModel()
     let hours = ["12:00", "03:00", "06:00", "09:00"]
     @State private var showSheet = false
+    @State private var showSettings = false
     @State private var selectedCity: CityNameModel?
     @StateObject var locationManager = LocationManager()
     
@@ -26,15 +27,31 @@ struct WeatherDashboardView: View {
             )
             .ignoresSafeArea()
             VStack() {
-                Button(action: {
-                    print("Search tapped!")
-                    showSheet = true
-                }) {
-                    Image(systemName: "magnifyingglass")
-                        .font(.title2)
-                        .padding(10)
-                        .background(Color.white.opacity(0.2))
-                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                HStack {
+                    Button(action: {
+                        print("Search tapped!")
+                        showSheet = true
+                    }) {
+                        Image(systemName: "magnifyingglass")
+                            .font(.title2)
+                            .padding(10)
+                            .background(Color.white.opacity(0.2))
+                            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    }
+                    
+                    .padding()
+                    
+                    Button(action: {
+                        print("Settings tapped!")
+                        showSettings = true
+                        
+                    }) {
+                        Image(systemName: "gear")
+                            .font(.title2)
+                            .padding(10)
+                            .background(Color.white.opacity(0.2))
+                            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                    }
                 }
                 
                 // Main Weather Info
@@ -110,6 +127,9 @@ struct WeatherDashboardView: View {
             }
             .sheet(isPresented: $showSheet) {
                 CitySearchView(selectedCity: $selectedCity)
+            }
+            .sheet(isPresented: $showSettings) {
+                SettingsView()
             }
             .navigationBarBackButtonHidden(true)
             .padding(.top)

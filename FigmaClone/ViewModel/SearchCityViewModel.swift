@@ -27,6 +27,10 @@ class SearchCityViewModel: ObservableObject {
         AppStorageManager.shared.save(data, forKey: "selectedCity")
     }
     
+    func deleteSearchResult(data: CityNameModel) {
+        AppStorageManager.shared.removeCity(data, forKey: "selectedCity")
+    }
+    
     func loadPreviousData() -> [CityNameModel]? {
         if let loadedCity = AppStorageManager.shared.load("selectedCity", as: CityNameModel.self) {
             cityNameModelDetails = loadedCity

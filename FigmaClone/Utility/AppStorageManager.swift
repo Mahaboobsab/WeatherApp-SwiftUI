@@ -28,6 +28,16 @@ final class AppStorageManager {
         return try? JSONDecoder().decode([T].self, from: data)
     }
     
+    func removeCity<T: Codable & Equatable>(_ value: T, forKey key: String) {
+        var values = load(key, as: T.self) ?? []
+        guard let index = values.firstIndex(of: value) else { return }
+        values.remove(at: index)
+        if let data = try? JSONEncoder().encode(values) {
+            UserDefaults.standard.set(String(data: data, encoding: .utf8), forKey: key)
+        }
+    }
+
+    
     func remove(_ key: String) {
         UserDefaults.standard.removeObject(forKey: key)
     }
