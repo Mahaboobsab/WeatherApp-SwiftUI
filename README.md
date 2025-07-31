@@ -21,8 +21,16 @@ WeatherApp using swiftUI
 
 https://github.com/user-attachments/assets/a289d41e-ea41-410c-b52c-4311f8a09b0a  
 
-Swipe to Delete
+**Swipe to Delete**  
+
 https://www.youtube.com/watch?v=oxJz9VljwFY
+
+**Privacy**  
+
+
+https://github.com/user-attachments/assets/89d82efc-3379-41ba-ab39-10cbe5c90806
+
+
 
 
 API's  
