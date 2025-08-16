@@ -15,7 +15,8 @@ struct WeatherDashboardView: View {
     @State private var showSettings = false
     @State private var selectedCity: CityNameModel?
     @StateObject var locationManager = LocationManager()
-    
+    @AppStorage("temperatureUnit") private var temperatureUnit = "°C"
+    @EnvironmentObject var themeManager: ThemeManager
     
     var body: some View {
         ZStack {
@@ -66,18 +67,18 @@ struct WeatherDashboardView: View {
                             .font(.system(size: 24, weight: .light))
                             .foregroundColor(.white)
                     }
-                    if let temp = weatherViewModel.weatherDetails?.main.temp {
-                        Text("\(Int(temp - 273.15))°")
+                    
+                    if let temp = weatherViewModel.currentTemp {
+                        Text("\(temp)\(weatherViewModel.temperatureUnit.rawValue)")
                             .font(.system(size: 54, weight: .bold))
                             .foregroundColor(.white)
                     }
-                    
-                    if let max = weatherViewModel.weatherDetails?.main.temp_max, let min = weatherViewModel.weatherDetails?.main.temp_min {
-                        Text("Precipitations\nMax: \(Int(max - 273.15))° Min: \(Int(min - 273.15))°")
-                            .multilineTextAlignment(.center)
-                            .font(.headline)
+
+                    if let maxMin = weatherViewModel.maxMinTemp {
+                        Text("Max: \(maxMin.max)\(weatherViewModel.temperatureUnit.rawValue) Min: \(maxMin.min)\(weatherViewModel.temperatureUnit.rawValue)")
                             .foregroundColor(.white)
                     }
+
                 }
                 Spacer()
                 

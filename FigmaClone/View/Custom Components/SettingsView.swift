@@ -8,24 +8,37 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var temperatureUnit = "°C"
-    @State private var windSpeedUnit = "Kilometers per hour (km/h)"
+    
+    @AppStorage("temperatureUnit") private var temperatureUnit = "°C"
+    @EnvironmentObject var themeManager: ThemeManager
+
+    
     @State private var pressureUnit = "Millibar (mbar)"
     @State private var updateAtNight = false
-
+    @State private var showRateSheet = false
+   
+    
     var body: some View {
         NavigationView {
             Form {
                 // 🌡️ Units Section
                 Section(header: Text("Units")) {
+                    
                     Picker("Temperature units", selection: $temperatureUnit) {
                         Text("°C").tag("°C")
                         Text("°F").tag("°F")
                     }
-                    Picker("Wind speed units", selection: $windSpeedUnit) {
-                        Text("Kilometers per hour (km/h)").tag("Kilometers per hour (km/h)")
-                        Text("Miles per hour (mph)").tag("Miles per hour (mph)")
+                    .onChange(of: temperatureUnit) { newValue in
+                        print("Selected new temprature unit: \(newValue)")
                     }
+                    
+                    Picker("App theme", selection: $themeManager.selectedTheme) {
+                        ForEach(AppTheme.allCases) { theme in
+                            Text(theme.rawValue.capitalized).tag(theme)
+                        }
+                    }
+        
+                    
                     Picker("Atmospheric pressure units", selection: $pressureUnit) {
                         Text("Millibar (mbar)").tag("Millibar (mbar)")
                         Text("Pascal (Pa)").tag("Pascal (Pa)")
@@ -44,9 +57,15 @@ struct SettingsView: View {
 
                 // 📄 About Section
                 Section(header: Text("About Weather")) {
-                    NavigationLink(destination: FeedbackView()) {
-                        Text("Feedback")
+                    Button("Feedback") {
+                        showRateSheet = true
+                    }.foregroundColor(.black)
+                    .sheet(isPresented: $showRateSheet) {
+                        RateWeatherView()
+                            .presentationDetents([.fraction(0.4)]) // 40% height
+                            //.presentationDragIndicator(.visible)
                     }
+
                     NavigationLink(destination: PrivacyPolicyView()) {
                         Text("Privacy Policy")
                     }
@@ -58,12 +77,21 @@ struct SettingsView: View {
 }
 
 // 🗣️ Feedback View
-struct FeedbackView: View {
-    var body: some View {
-        Text("Feedback")
-            .navigationBarTitle("Feedback", displayMode: .inline)
-    }
-}
+//struct FeedbackView: View {
+//    @State private var showRateSheet = false
+//    var body: some View {
+//        Text("Feedback")
+//            .onAppear {
+//                showRateSheet = true
+//            }
+//            .sheet(isPresented: $showRateSheet) {
+//                RateWeatherView()
+//                    .presentationDetents([.fraction(0.4)]) // 40% height
+//                    .presentationDragIndicator(.visible)
+//            }
+//    }
+//}
+
 
 // 🔐 Privacy Policy View
 

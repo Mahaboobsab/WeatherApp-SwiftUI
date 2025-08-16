@@ -76,7 +76,7 @@ struct WeatherResponseResource {
 
     func getWeatherDetails(lat:Double,
                            lon: Double,
-                           completionHandler:@escaping(_ result: WeatherResponse?)->Void) {
+                           completionHandler: @escaping(_ result: WeatherResponse?)->Void ) {
 
         var urlRequest = URLRequest(url: URL(string: buildWeatherURL(lat: lat, lon: lon))!)
         urlRequest.httpMethod = "get"

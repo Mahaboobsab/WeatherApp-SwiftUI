@@ -13,7 +13,7 @@ final class HttpUtility {
     private init(){}
 
     func getData<T:Decodable>(request: URLRequest, resultType:T.Type,
-                              completionHandler:@escaping(_ reuslt: T?)-> Void) {
+                              completionHandler: @escaping(_ reuslt: T?) -> Void) {
 
         URLSession.shared.dataTask(with: request) { data, response, error in
             if(error == nil && data != nil) {

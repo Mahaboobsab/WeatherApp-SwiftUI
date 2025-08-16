@@ -153,8 +153,7 @@ struct CityModel: Codable {
 
 struct CityResponseResource {
 
-    func getWeatherDetails(completionHandler:@escaping(_ result: CityModel?)->Void) {
-
+    func getWeatherDetails(completionHandler: @escaping(_ result: CityModel?)->Void) {
         var urlRequest = URLRequest(url: URL(string: buildCityURL())!)
         urlRequest.httpMethod = "get"
         urlRequest.addValue("application/json", forHTTPHeaderField: "content-type")
