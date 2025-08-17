@@ -27,8 +27,15 @@ https://www.youtube.com/watch?v=oxJz9VljwFY
 
 **TempratureConversion**  
 
-
 https://github.com/user-attachments/assets/c0e0afe8-135f-4082-a736-5957f81ee8f2
+
+**Dark Mode**
+
+https://github.com/user-attachments/assets/18325769-fa18-4b57-be73-f5639245a06b
+
+**Rate View**
+https://github.com/user-attachments/assets/b114ed3b-1ed6-4302-9668-e89a95fa4182
+
 
 
 
